@@ -1,4 +1,4 @@
-package me.imzack.app.tick.model
+package me.imzack.app.tick.model.preference
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager

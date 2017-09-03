@@ -2,7 +2,7 @@ package me.imzack.app.tick
 
 import android.app.Application
 import android.content.Context
-import me.imzack.app.tick.model.PreferenceHelper
+import me.imzack.app.tick.model.preference.PreferenceHelper
 
 class App : Application() {
 

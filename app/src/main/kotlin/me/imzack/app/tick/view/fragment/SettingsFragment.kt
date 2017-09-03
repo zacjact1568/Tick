@@ -4,8 +4,7 @@ import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.ListPreference
 import android.preference.PreferenceFragment
-import android.preference.SwitchPreference
-import me.imzack.app.tick.model.PreferenceHelper
+import me.imzack.app.tick.model.preference.PreferenceHelper
 import me.imzack.app.tick.R
 import me.imzack.app.tick.common.Constant
 import me.imzack.app.tick.util.SystemUtil

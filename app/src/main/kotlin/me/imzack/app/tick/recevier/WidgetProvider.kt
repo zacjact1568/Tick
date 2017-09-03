@@ -11,6 +11,7 @@ import android.text.format.DateFormat
 import android.widget.RemoteViews
 import me.imzack.app.tick.App
 import me.imzack.app.tick.R
+import me.imzack.app.tick.model.bean.Time
 import me.imzack.app.tick.util.SystemUtil
 import java.util.*
 
@@ -35,9 +36,9 @@ class WidgetProvider : AppWidgetProvider() {
             val context = App.context
             val preferenceHelper = App.preferenceHelper
             val remoteViews = RemoteViews(context.packageName, R.layout.widget)
-            val calendar = Calendar.getInstance()
-            remoteViews.setTextViewText(R.id.vHourText, calendar.get(if (DateFormat.is24HourFormat(context)) Calendar.HOUR_OF_DAY else Calendar.HOUR).toString())
-            remoteViews.setTextViewText(R.id.vMinuteText, calendar.get(Calendar.MINUTE).toString())
+            val time = Time.instance
+            remoteViews.setTextViewText(R.id.vHourText, time.hourString)
+            remoteViews.setTextViewText(R.id.vMinuteText, time.minuteString)
             remoteViews.setTextColor(R.id.vHourText, Color.parseColor(preferenceHelper.getHourTextColorValueOf(appWidgetId)))
             remoteViews.setTextColor(R.id.vMinuteText, Color.parseColor(preferenceHelper.getMinuteTextColorValueOf(appWidgetId)))
             AppWidgetManager.getInstance(context).updateAppWidget(appWidgetId, remoteViews)
