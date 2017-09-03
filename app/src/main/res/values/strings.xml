@@ -4,9 +4,17 @@
 
     <string name="text_add_widget">Add widget</string>
 
+    <string name="pref_category_title_global">Global</string>
+    <string name="pref_category_title_widget">Widget</string>
+    <string name="pref_category_title_about">About</string>
+
     <string name="pref_title_set_as_default">Set As Default</string>
     <string name="pref_title_hour_text_color">Hour Text Color</string>
     <string name="pref_title_minute_text_color">Minute Text Color</string>
+    <string name="pref_title_version">Version</string>
+    <string name="pref_title_libraries">Libraries</string>
+
+    <string name="pref_summary_libraries">Click to see</string>
 
     <string name="pref_summary_on_set_as_default">Configuration isn\'t needed before adding widget</string>
     <string name="pref_summary_off_set_as_default">Configuration is needed before adding widget</string>

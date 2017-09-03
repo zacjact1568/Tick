@@ -2,6 +2,7 @@ package me.imzack.app.tick.util
 
 import android.app.AlarmManager
 import android.content.Context
+import android.content.pm.PackageManager
 import me.imzack.app.tick.App
 import me.imzack.app.tick.recevier.WidgetProvider
 import java.util.*
@@ -22,4 +23,15 @@ object SystemUtil {
         val context = App.context
         (context.getSystemService(Context.ALARM_SERVICE) as AlarmManager).cancel(WidgetProvider.getPendingIntentForSend(context))
     }
+
+    val versionName: String
+        get() {
+            val context = App.context
+            return try {
+                val info = context.packageManager.getPackageInfo(context.packageName, 0)
+                info.versionName
+            } catch (e: PackageManager.NameNotFoundException) {
+                "null"
+            }
+        }
 }

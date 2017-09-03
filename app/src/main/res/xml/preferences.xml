@@ -1,26 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <SwitchPreference
-        android:key="set_as_default"
-        android:title="@string/pref_title_set_as_default"
-        android:summaryOn="@string/pref_summary_on_set_as_default"
-        android:summaryOff="@string/pref_summary_off_set_as_default"
-        android:defaultValue="false"/>
+    <PreferenceCategory
+        android:key="global"
+        android:title="@string/pref_category_title_global">
 
-    <ListPreference
-        android:key="hour_text_color"
-        android:title="@string/pref_title_hour_text_color"
-        android:entries="@array/pref_entries_hour_text_color"
-        android:entryValues="@array/pref_values_hour_text_color"
-        android:defaultValue="#FFFFFFFF"/>
+        <SwitchPreference
+            android:key="set_as_default"
+            android:title="@string/pref_title_set_as_default"
+            android:summaryOn="@string/pref_summary_on_set_as_default"
+            android:summaryOff="@string/pref_summary_off_set_as_default"
+            android:defaultValue="false"/>
 
-    <ListPreference
-        android:key="minute_text_color"
-        android:title="@string/pref_title_minute_text_color"
-        android:entries="@array/pref_entries_minute_text_color"
-        android:entryValues="@array/pref_values_minute_text_color"
-        android:defaultValue="#FFFFFFFF"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="widget"
+        android:title="@string/pref_category_title_widget">
+
+        <ListPreference
+            android:key="hour_text_color"
+            android:title="@string/pref_title_hour_text_color"
+            android:entries="@array/pref_entries_hour_text_color"
+            android:entryValues="@array/pref_values_hour_text_color"
+            android:defaultValue="#FFFFFFFF"/>
+
+        <ListPreference
+            android:key="minute_text_color"
+            android:title="@string/pref_title_minute_text_color"
+            android:entries="@array/pref_entries_minute_text_color"
+            android:entryValues="@array/pref_values_minute_text_color"
+            android:defaultValue="#FFFFFFFF"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="about"
+        android:title="@string/pref_category_title_about">
+
+        <Preference
+            android:key="version"
+            android:title="@string/pref_title_version"
+            tools:summary="1.0"/>
+
+        <Preference
+            android:key="libraries"
+            android:title="@string/pref_title_libraries"
+            android:summary="@string/pref_summary_libraries"/>
+
+    </PreferenceCategory>
 
 </PreferenceScreen>

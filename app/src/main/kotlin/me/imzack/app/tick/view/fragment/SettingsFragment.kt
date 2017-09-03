@@ -8,6 +8,7 @@ import android.preference.SwitchPreference
 import me.imzack.app.tick.model.PreferenceHelper
 import me.imzack.app.tick.R
 import me.imzack.app.tick.common.Constant
+import me.imzack.app.tick.util.SystemUtil
 
 class SettingsFragment : PreferenceFragment(), SharedPreferences.OnSharedPreferenceChangeListener {
 
@@ -24,9 +25,6 @@ class SettingsFragment : PreferenceFragment(), SharedPreferences.OnSharedPrefere
         }
     }
 
-    private val mSetAsDefaultPreference by lazy {
-        findPreference(Constant.PREF_KEY_SET_AS_DEFAULT) as SwitchPreference
-    }
     private val mHourTextColorPreference by lazy {
         findPreference(Constant.PREF_KEY_HOUR_TEXT_COLOR) as ListPreference
     }
@@ -41,11 +39,15 @@ class SettingsFragment : PreferenceFragment(), SharedPreferences.OnSharedPrefere
 
         val args = arguments
         if (args != null && args.containsKey(ARG_APP_WIDGET_ID)) {
-            // 在添加 widget 的 activity 中
-            preferenceScreen.removePreference(mSetAsDefaultPreference)
+            // 在 WidgetConfigurationActivity 中，移除全局设置的 preference category
+            preferenceScreen.removePreference(findPreference(Constant.PREF_CATEGORY_KEY_GLOBAL))
+            preferenceScreen.removePreference(findPreference(Constant.PREF_CATEGORY_KEY_ABOUT))
             val appWidgetId = args.getInt(ARG_APP_WIDGET_ID)
             mHourTextColorPreference.key = PreferenceHelper.getKeyOf(appWidgetId, Constant.PREF_KEY_HOUR_TEXT_COLOR)
             mMinuteTextColorPreference.key = PreferenceHelper.getKeyOf(appWidgetId, Constant.PREF_KEY_MINUTE_TEXT_COLOR)
+        } else {
+            // 在 HomeActivity 中
+            findPreference(Constant.PREF_KEY_VERSION).summary = SystemUtil.versionName
         }
 
         setSummary(mHourTextColorPreference.key)
