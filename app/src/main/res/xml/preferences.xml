@@ -46,9 +46,14 @@
             tools:summary="1.0"/>
 
         <Preference
-            android:key="libraries"
-            android:title="@string/pref_title_libraries"
-            android:summary="@string/pref_summary_libraries"/>
+            android:key="thanks"
+            android:title="@string/pref_title_thanks"
+            android:summary="@string/pref_summary_thanks"/>
+
+        <Preference
+            android:key="problems"
+            android:title="@string/pref_title_problems"
+            android:summary="@string/pref_summary_problems"/>
 
     </PreferenceCategory>
 

@@ -9,7 +9,8 @@ object Constant {
     val PREF_KEY_HOUR_TEXT_COLOR = "hour_text_color"
     val PREF_KEY_MINUTE_TEXT_COLOR = "minute_text_color"
     val PREF_KEY_VERSION = "version"
-    val PREF_KEY_LIBRARIES = "libraries"
+    val PREF_KEY_THANKS = "thanks"
+    val PREF_KEY_PROBLEMS = "problems"
 
     val PREF_DEF_VALUE_HOUR_TEXT_COLOR = "#FFFFFFFF"
     val PREF_DEF_VALUE_MINUTE_TEXT_COLOR = "#FF000000"

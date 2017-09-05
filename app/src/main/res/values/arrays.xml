@@ -21,4 +21,16 @@
         <item>#FF000000</item>
     </string-array>
 
+    <string-array name="problem_descriptions">
+        <item>Widgets don\'t refresh?</item>
+    </string-array>
+
+    <string-array name="problem_solutions">
+        <item>
+            Tick uses a system-level service to refresh widgets at the specific time, but some devices were pre-installed an optimized
+            version of Android system, which makes widgets sometimes can\'t refresh in time. If you meet this problem, please try to
+            turn on auto-start and background running permissions for Tick.
+        </item>
+    </string-array>
+
 </resources>

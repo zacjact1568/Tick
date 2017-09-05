@@ -1,9 +1,14 @@
 package me.imzack.app.tick.util
 
+import android.app.Activity
 import android.app.AlarmManager
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
+import android.widget.Toast
 import me.imzack.app.tick.App
+import me.imzack.app.tick.R
 import me.imzack.app.tick.recevier.WidgetProvider
 import java.util.*
 
@@ -22,6 +27,19 @@ object SystemUtil {
     fun cancelUpdateWidgetAlarm() {
         val context = App.context
         (context.getSystemService(Context.ALARM_SERVICE) as AlarmManager).cancel(WidgetProvider.getPendingIntentForSend(context))
+    }
+
+    fun openLink(link: String, activity: Activity, failed: String = activity.getString(R.string.toast_no_link_app_found)) {
+        val intent = Intent(Intent.ACTION_VIEW, Uri.parse(link))
+        if (intent.resolveActivity(activity.packageManager) != null) {
+            activity.startActivity(intent)
+        } else {
+            showToast(failed)
+        }
+    }
+
+    fun showToast(msg: String) {
+        Toast.makeText(App.context, msg, Toast.LENGTH_SHORT).show()
     }
 
     val versionName: String

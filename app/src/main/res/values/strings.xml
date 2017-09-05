@@ -12,11 +12,15 @@
     <string name="pref_title_hour_text_color">Hour Text Color</string>
     <string name="pref_title_minute_text_color">Minute Text Color</string>
     <string name="pref_title_version">Version</string>
-    <string name="pref_title_libraries">Libraries</string>
+    <string name="pref_title_thanks">Thanks</string>
+    <string name="pref_title_problems">Problems</string>
 
-    <string name="pref_summary_libraries">Click to see</string>
+    <string name="pref_summary_thanks">Touch to view</string>
+    <string name="pref_summary_problems">Touch to view</string>
 
     <string name="pref_summary_on_set_as_default">Configuration isn\'t needed before adding widget</string>
     <string name="pref_summary_off_set_as_default">Configuration is needed before adding widget</string>
+
+    <string name="toast_no_link_app_found">No app can open a link</string>
 
 </resources>

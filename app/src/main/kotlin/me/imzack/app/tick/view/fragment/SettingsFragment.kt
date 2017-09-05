@@ -3,7 +3,10 @@ package me.imzack.app.tick.view.fragment
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.preference.ListPreference
+import android.preference.Preference
 import android.preference.PreferenceFragment
+import android.support.v4.app.FragmentActivity
+import android.util.Log
 import me.imzack.app.tick.model.preference.PreferenceHelper
 import me.imzack.app.tick.R
 import me.imzack.app.tick.common.Constant
@@ -23,6 +26,9 @@ class SettingsFragment : PreferenceFragment(), SharedPreferences.OnSharedPrefere
             return fragment
         }
     }
+
+    private val TAG_THANKS = "thanks"
+    private val TAG_PROBLEMS = "problems"
 
     private val mHourTextColorPreference by lazy {
         findPreference(Constant.PREF_KEY_HOUR_TEXT_COLOR) as ListPreference
@@ -47,6 +53,15 @@ class SettingsFragment : PreferenceFragment(), SharedPreferences.OnSharedPrefere
         } else {
             // 在 HomeActivity 中
             findPreference(Constant.PREF_KEY_VERSION).summary = SystemUtil.versionName
+            // 这两个在 preference 中没有值，因此不能用 onPreferenceChangeListener
+            findPreference(Constant.PREF_KEY_THANKS).onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                showFragment(TAG_THANKS)
+                true
+            }
+            findPreference(Constant.PREF_KEY_PROBLEMS).onPreferenceClickListener = Preference.OnPreferenceClickListener {
+                showFragment(TAG_PROBLEMS)
+                true
+            }
         }
 
         setSummary(mHourTextColorPreference.key)
@@ -74,5 +89,13 @@ class SettingsFragment : PreferenceFragment(), SharedPreferences.OnSharedPrefere
             mHourTextColorPreference.key -> mHourTextColorPreference.summary = mHourTextColorPreference.entry
             mMinuteTextColorPreference.key -> mMinuteTextColorPreference.summary = mMinuteTextColorPreference.entry
         }
+    }
+
+    private fun showFragment(tag: String) {
+        (activity as FragmentActivity).supportFragmentManager.beginTransaction().replace(R.id.vSettingsLayout, when (tag) {
+            TAG_THANKS -> ThanksFragment()
+            TAG_PROBLEMS -> ProblemsFragment()
+            else -> throw IllegalArgumentException("Tag \"$tag\" is illegal")
+        }).addToBackStack(null).commit()
     }
 }
