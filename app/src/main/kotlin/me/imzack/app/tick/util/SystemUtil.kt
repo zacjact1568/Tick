@@ -9,7 +9,7 @@ import android.net.Uri
 import android.widget.Toast
 import me.imzack.app.tick.App
 import me.imzack.app.tick.R
-import me.imzack.app.tick.recevier.WidgetProvider
+import me.imzack.app.tick.receiver.WidgetProvider
 import java.util.*
 
 object SystemUtil {

@@ -5,24 +5,24 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:layout_gravity="center"
-    tools:context=".recevier.WidgetProvider">
+    tools:context=".receiver.WidgetProvider">
 
     <TextView
         android:id="@+id/vHourText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10"
-        android:textSize="40sp"
+        android:textSize="60sp"
         android:textStyle="bold"
-        android:typeface="monospace"/>
+        android:typeface="monospace"
+        tools:text="10"/>
 
     <TextView
         android:id="@+id/vMinuteText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="08"
-        android:textSize="40sp"
+        android:textSize="60sp"
         android:textStyle="bold"
-        android:typeface="monospace"/>
+        android:typeface="monospace"
+        tools:text="08"/>
 
 </LinearLayout>

@@ -1,4 +1,4 @@
-package me.imzack.app.tick.recevier
+package me.imzack.app.tick.receiver
 
 import android.appwidget.AppWidgetManager
 import android.content.BroadcastReceiver

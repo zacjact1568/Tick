@@ -1,22 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="pref_entries_hour_text_color">
+    <string-array name="pref_entries_text_color">
         <item>Light</item>
         <item>Dark</item>
     </string-array>
 
-    <string-array name="pref_values_hour_text_color">
-        <item>#FFFFFFFF</item>
-        <item>#FF000000</item>
-    </string-array>
-
-    <string-array name="pref_entries_minute_text_color">
-        <item>Light</item>
-        <item>Dark</item>
-    </string-array>
-
-    <string-array name="pref_values_minute_text_color">
+    <string-array name="pref_values_text_color">
         <item>#FFFFFFFF</item>
         <item>#FF000000</item>
     </string-array>

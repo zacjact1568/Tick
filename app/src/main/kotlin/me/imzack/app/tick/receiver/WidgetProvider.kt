@@ -1,4 +1,4 @@
-package me.imzack.app.tick.recevier
+package me.imzack.app.tick.receiver
 
 import android.app.PendingIntent
 import android.appwidget.AppWidgetManager
@@ -7,13 +7,11 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
-import android.text.format.DateFormat
 import android.widget.RemoteViews
 import me.imzack.app.tick.App
 import me.imzack.app.tick.R
 import me.imzack.app.tick.model.bean.Time
 import me.imzack.app.tick.util.SystemUtil
-import java.util.*
 
 class WidgetProvider : AppWidgetProvider() {
 
@@ -38,8 +36,8 @@ class WidgetProvider : AppWidgetProvider() {
             val remoteViews = RemoteViews(context.packageName, R.layout.widget)
             val time = Time.instance
             remoteViews.setTextViewText(R.id.vHourText, time.hourString)
-            remoteViews.setTextViewText(R.id.vMinuteText, time.minuteString)
             remoteViews.setTextColor(R.id.vHourText, Color.parseColor(preferenceHelper.getHourTextColorValueOf(appWidgetId)))
+            remoteViews.setTextViewText(R.id.vMinuteText, time.minuteString)
             remoteViews.setTextColor(R.id.vMinuteText, Color.parseColor(preferenceHelper.getMinuteTextColorValueOf(appWidgetId)))
             AppWidgetManager.getInstance(context).updateAppWidget(appWidgetId, remoteViews)
         }

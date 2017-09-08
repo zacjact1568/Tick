@@ -6,7 +6,6 @@ import android.preference.ListPreference
 import android.preference.Preference
 import android.preference.PreferenceFragment
 import android.support.v4.app.FragmentActivity
-import android.util.Log
 import me.imzack.app.tick.model.preference.PreferenceHelper
 import me.imzack.app.tick.R
 import me.imzack.app.tick.common.Constant

@@ -23,15 +23,15 @@
         <ListPreference
             android:key="hour_text_color"
             android:title="@string/pref_title_hour_text_color"
-            android:entries="@array/pref_entries_hour_text_color"
-            android:entryValues="@array/pref_values_hour_text_color"
+            android:entries="@array/pref_entries_text_color"
+            android:entryValues="@array/pref_values_text_color"
             android:defaultValue="#FFFFFFFF"/>
 
         <ListPreference
             android:key="minute_text_color"
             android:title="@string/pref_title_minute_text_color"
-            android:entries="@array/pref_entries_minute_text_color"
-            android:entryValues="@array/pref_values_minute_text_color"
+            android:entries="@array/pref_entries_text_color"
+            android:entryValues="@array/pref_values_text_color"
             android:defaultValue="#FFFFFFFF"/>
 
     </PreferenceCategory>

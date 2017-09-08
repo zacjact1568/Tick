@@ -12,7 +12,7 @@ import me.imzack.app.tick.App
 import me.imzack.app.tick.R
 import me.imzack.app.tick.view.fragment.SettingsFragment
 import me.imzack.app.tick.util.SystemUtil
-import me.imzack.app.tick.recevier.WidgetProvider
+import me.imzack.app.tick.receiver.WidgetProvider
 
 // 在添加小部件时启动此 activity
 class WidgetConfigurationActivity : AppCompatActivity() {

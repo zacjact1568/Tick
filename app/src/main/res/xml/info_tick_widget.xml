@@ -4,8 +4,8 @@
     android:configure="me.imzack.app.tick.view.activity.WidgetConfigurationActivity"
     android:initialKeyguardLayout="@layout/widget"
     android:initialLayout="@layout/widget"
-    android:minHeight="80dp"
     android:minWidth="40dp"
+    android:minHeight="80dp"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="0"
     android:widgetCategory="home_screen">
