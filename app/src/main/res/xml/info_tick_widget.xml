@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appwidget-provider
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:configure="me.imzack.app.tick.view.activity.WidgetConfigurationActivity"
+    android:configure="net.zackzhang.app.tick.view.activity.WidgetConfigurationActivity"
     android:initialKeyguardLayout="@layout/widget"
     android:initialLayout="@layout/widget"
     android:minWidth="40dp"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="me.imzack.app.tick">
+          package="net.zackzhang.app.tick">
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="me.imzack.app.tick.view.activity.HomeActivity">
+        <activity android:name="net.zackzhang.app.tick.view.activity.HomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="me.imzack.app.tick.view.activity.WidgetConfigurationActivity">
+        <activity android:name="net.zackzhang.app.tick.view.activity.WidgetConfigurationActivity">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE"/>
             </intent-filter>
