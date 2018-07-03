@@ -4,13 +4,13 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.0'
 
     defaultConfig {
-        applicationId "me.imzack.app.tick"
+        applicationId 'me.imzack.app.tick'
         minSdkVersion 21
-        targetSdkVersion 25
+        targetSdkVersion 28
         versionCode Math.ceil((new Date().time - 1503676800000) / 86400000) as int
         versionName new Date().format('yyyyMMdd')
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -33,15 +33,15 @@ androidExtensions {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
-    testCompile 'junit:junit:4.12'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:$android_support_version"
+    implementation "com.android.support:design:$android_support_version"
+    implementation "com.android.support:support-v4:$android_support_version"
+    implementation "com.jakewharton:butterknife:$butterknife_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     kapt "com.jakewharton:butterknife-compiler:$butterknife_version"
-    compile "com.android.support:appcompat-v7:$android_support_version"
-    compile "com.android.support:design:$android_support_version"
-    compile "com.android.support:support-v4:$android_support_version"
-    compile "com.jakewharton:butterknife:$butterknife_version"
-    compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
 }
